@@ -32,8 +32,8 @@ function applyTheme(theme) {
   const isDark = theme === 'dark';
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute('aria-pressed', String(isDark));
-  themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
-  themeLabel.textContent = isDark ? 'Light' : 'Dark';
+  themeToggle.setAttribute('aria-label', `เปลี่ยนเป็นโหมด${isDark ? 'สว่าง' : 'มืด'}`);
+  themeLabel.textContent = isDark ? 'สว่าง' : 'มืด';
 }
 
 if (themeToggle) {

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap');
 
 :root { --ink:#17211d; --muted:#68736e; --paper:#f4f5ef; --line:#d9ded6; --lime:#d9f36b; --orange:#f47c55; --dark:#222d28; --card:#fff; }
 html[data-theme="dark"] { --ink:#eef4eb; --muted:#a8b4ad; --paper:#121a16; --line:#304039; --lime:#d9f36b; --orange:#ff966f; --dark:#1e2923; --card:#1c2721; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope,Arial,sans-serif; line-height:1.6; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Noto Sans Thai',Manrope,Arial,sans-serif; line-height:1.7; }
 a { color:inherit; }
 .site-header { width:min(100% - 3rem,1200px); margin:auto; padding:1.4rem 0; display:flex; justify-content:space-between; align-items:center; }
 .brand { display:flex; gap:.65rem; align-items:center; text-decoration:none; font-weight:800; letter-spacing:-.04em; font-size:1.1rem; }
