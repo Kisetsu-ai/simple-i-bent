@@ -20,6 +20,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 const themeToggle = document.querySelector('.theme-toggle');
 const themeLabel = document.querySelector('.theme-label');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isThai = document.documentElement.lang === 'th';
 
 let savedTheme = null;
 try {
@@ -32,8 +33,8 @@ function applyTheme(theme) {
   const isDark = theme === 'dark';
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute('aria-pressed', String(isDark));
-  themeToggle.setAttribute('aria-label', `เปลี่ยนเป็นโหมด${isDark ? 'สว่าง' : 'มืด'}`);
-  themeLabel.textContent = isDark ? 'สว่าง' : 'มืด';
+  themeToggle.setAttribute('aria-label', isThai ? `เปลี่ยนเป็นโหมด${isDark ? 'สว่าง' : 'มืด'}` : `Switch to ${isDark ? 'light' : 'dark'} mode`);
+  themeLabel.textContent = isThai ? (isDark ? 'สว่าง' : 'มืด') : (isDark ? 'Light' : 'Dark');
 }
 
 if (themeToggle) {

@@ -10,6 +10,7 @@ a { color:inherit; }
 .brand { display:flex; gap:.65rem; align-items:center; text-decoration:none; font-weight:800; letter-spacing:-.04em; font-size:1.1rem; }
 .brand-mark { width:2rem; height:2rem; border-radius:50%; background:var(--ink); color:var(--lime); display:grid; place-items:center; font-family:'DM Mono',monospace; }
 .header-actions { display:flex; align-items:center; gap:1rem; }
+.language-switch { padding:.35rem .55rem; border:1px solid var(--line); border-radius:99px; color:var(--muted); font:500 .72rem 'DM Mono',monospace; text-decoration:none; }.language-switch:hover { border-color:var(--orange); color:var(--orange); }
 .site-nav { display:flex; gap:2rem; align-items:center; font-size:.85rem; color:var(--muted); }
 .site-nav a,.text-link,.site-footer a { text-decoration:none; }
 .site-nav a:hover,.site-nav a:focus-visible,.text-link:hover,.site-footer a:hover { color:var(--orange); }
