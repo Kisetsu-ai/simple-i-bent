@@ -19,22 +19,32 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 const themeToggle = document.querySelector('.theme-toggle');
 const themeLabel = document.querySelector('.theme-label');
-const savedTheme = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+let savedTheme = null;
+try {
+  savedTheme = localStorage.getItem('theme');
+} catch {
+  // The toggle still works if browser storage is unavailable.
+}
 
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute('aria-pressed', String(isDark));
+  themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
   themeLabel.textContent = isDark ? 'Light' : 'Dark';
-  themeToggle.querySelector('[aria-hidden="true"]').textContent = isDark ? '☀' : '☾';
 }
 
 if (themeToggle) {
   applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
   themeToggle.addEventListener('click', () => {
     const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', nextTheme);
+    try {
+      localStorage.setItem('theme', nextTheme);
+    } catch {
+      // The selected theme remains active for this visit.
+    }
     applyTheme(nextTheme);
   });
 }
